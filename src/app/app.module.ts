@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {HttpClientModule} from '@angular/common/http'
+import {ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { MenuComponent } from './menu/menu.component';
 import { DescripcionComponent } from './descripcion/descripcion.component';
 import { FooterComponent } from './footer/footer.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { FormulariohabitacionComponent } from './formulariohabitacion/formulariohabitacion.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,14 @@ import { RoomsComponent } from './rooms/rooms.component';
     MenuComponent,
     DescripcionComponent,
     FooterComponent,
-    RoomsComponent
+    RoomsComponent,
+    FormulariohabitacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

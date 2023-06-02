@@ -7,14 +7,18 @@ import {Observable} from 'rxjs'
 })
 export class HabitacionesService {
 
-  public url:string="https://api-hoteles.vercel.app"
+  public url:string="https://api-hoteles.vercel.app/"
 
   constructor(public servicioHabitacion:HttpClient) { }
 
   public buscarHabitaciones():Observable<any>{
-    let enpoint="/buscarhabitaciones"
-    let uri=this.url+enpoint
-    return this.servicioHabitacion.get(uri)
+    let urlServicio:string=this.url+"buscarhabitaciones"
+    return this.servicioHabitacion.get(urlServicio)
+  }
+
+  public registrarHabitacion(datos:any):Observable<any>{
+    let urlServicio:string=this.url+"registrarhabitacion"
+    return this.servicioHabitacion.post(urlServicio, datos)
   }
   
   public buscarHabitacion(){}
